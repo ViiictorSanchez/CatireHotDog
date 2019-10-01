@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Catire HotDog</title>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/boostrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Bootsnav -->
+    <link rel="stylesheet" href="css/bootsnav.css">
+    <!-- Color style -->
+    <link rel="stylesheet" href="css/color.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+        <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+                <form class="login100-form validate-form text-center">
+                    <span class="login100-form-title p-b-37">
+                        Inicia sesion
+                    </span>
+    
+                    <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
+                        <input class="input100" type="text" name="username" placeholder="usuario o correo">
+                        <span class="focus-input100"></span>
+                    </div>
+    
+                    <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
+                        <input class="input100" type="password" name="pass" placeholder="contrasena">
+                        <span class="focus-input100"></span>
+                    </div>
+    
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Iniciar Sesion
+                        </button>
+                    </div>
+    
+                    <div class="text-center p-t-57 p-b-20">
+                        <span class="txt1">
+                           O Inicia sesion con
+                        </span>
+                    </div>
+    
+                    <div class="p-b-112 align-icons-login">
+                        <a href="#" class="login100-social-item">
+                            <i class="fa fa-facebook-f"></i>
+                        </a>
+    
+                        <a href="#" class="login100-social-item">
+                            <img src="images/icons/icon-google.png" alt="GOOGLE">
+                        </a>
+                    </div>
+    
+                    <div class="text-center">
+                        <a href="#" class="txt2 hov1">
+                            Sign Up
+                        </a>
+                    </div>
+                </form>
+    
+                
+            </div>
+        </div>
+        
+        
+    
+        <div id="dropDownSelect1"></div>
+    
+
+
+    <!-- JavaScript -->
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>		
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Bootsnav js -->
+    <script src="js/bootsnav.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/gmaps.min.js"></script>
+
+    <script type="text/javascript">
+        var map;
+        $(document).ready(function () {
+            map = new GMaps({
+                el: '#ourmaps',
+                lat: 3.139003,
+                lng: 101.686855,
+                scrollwheel: false
+            });
+
+            //locations request
+            map.getElevations({
+                locations: [[3.139003, 101.686855]],
+                callback: function (result, status) {
+                    if (status == google.maps.ElevationStatus.OK) {
+                        for (var i in result) {
+                            map.addMarker({
+                                lat: result[i].location.lat(),
+                                lng: result[i].location.lng(),
+                                infoWindow: {
+                                    content: '<address class="tooltip_address"><b>Junky Burger</b><br />Jalan Awan Hijau, Taman OUG<br />58200 Kuala Lumpur <br />Malaysia <br /></address>'
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+
+
+    <!--main js-->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
