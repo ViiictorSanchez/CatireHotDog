@@ -183,7 +183,7 @@ iframe {
 }
 
 .wrap-login100 {
-  width: 390px;
+  width: 600px;
   background: rgba(255, 0, 0, 0.8);
   border-radius: 10px;
   overflow: hidden;
@@ -207,7 +207,7 @@ iframe {
   display: block;
   font-family: SourceSansPro-Bold;
   font-size: 30px;
-  color: #4b2354;
+  color: #fff;
   line-height: 1.2;
   text-align: center;
 }
@@ -223,7 +223,7 @@ iframe {
   width: 100%;
   position: relative;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .input100 {
@@ -414,7 +414,6 @@ iframe {
 .login100-social-item {
   font-size: 25px;
   color: #3b5998;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
